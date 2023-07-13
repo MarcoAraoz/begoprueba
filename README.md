@@ -1,6 +1,6 @@
-# Prueba Técnica BeGo
+# Prueba Técnica Backend BeGo
 
-Proyecto realizado con la finalidad de crear y consumir endpoints usando Stack de programación basado en MongoDB, Node, Express, Javascript y paqueterías de terceros para autenticar usuarios a través de tokens.
+Proyecto realizado con la finalidad de crear y consumir endpoints usando Stack de programación basado en MongoDB, Node, Express, Javascript y paqueterías de terceros para autenticar usuarios a través de tokens (la base de datos se estableció de manera local en MongoDB Compass).
 
 ## Estructura de directorios
 
@@ -52,6 +52,30 @@ GET http://localhost:3000/api/routes/:id  | Regresa la ruta indicada por el usua
 PUT http://localhost:3000/api/routes/:id | Modifica la ruta especificada.
 
 DELETE http://localhost:3000/api/routes/:id | Elimina la ruta especificada.
+
+**-Points CRUD: Se creó el modelo ingresando los valores recibidos en formato JSON con modificación unicamente en el ID**
+
+POST http://localhost:3000/api/points | Valida el usuario y crea una point.
+
+GET http://localhost:3000/api/points  | Regresa los points creados.
+
+GET http://localhost:3000/api/points/:id  | Regresa el point indicada por el usuario validado que hace la consulta.
+
+PUT http://localhost:3000/api/points/:id | Se añadió la posibilidad de modificar un point.
+
+DELETE http://localhost:3000/api/points/:id | Se añadió la posibilidad de eliminar un point.
+
+**-Trucks CRUD: Se creó el modelo ingresando los valores recibidos en formato JSON con modificación unicamente en el ID**
+
+POST http://localhost:3000/api/trucks | Crea un truck.
+
+GET http://localhost:3000/api/trucks  | Regresa los trucks creados.
+
+GET http://localhost:3000/api/trucks/:id  | Regresa el truck indicado.
+
+PUT http://localhost:3000/api/trucks/:id | Se añadió la posibilidad de modificar un truck.
+
+DELETE http://localhost:3000/api/trucks/:id | Se añadió la posibilidad de eliminar un truck.
 
 
 

@@ -4,11 +4,11 @@ const routesSchema = new mongoose.Schema(
   {
     origenPlaceId: {
       type: String,
-      required: true,
+      // required: true,
     },
     destinoPlaceId: {
       type: String,
-      required: true,
+      // required: true,
     },
     distance: {
       type: String,

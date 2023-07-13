@@ -74,7 +74,7 @@ export const deleteRoute = async (req, res) => {
 
 export const updateRoute = async (req, res) => {
   try {
-    const {} = req.body;
+    const { origenPlaceId, destinoPlaceId } = req.body;
     const route = await Routes.findById(req.params.id);
 
     if (!route) {
@@ -87,9 +87,9 @@ export const updateRoute = async (req, res) => {
     //     .json({ message: "Cannot modify an order in progress" });
     // }
 
-    const routeUpdated = await Order.findOneAndUpdate(
+    const routeUpdated = await Routes.findOneAndUpdate(
       { _id: req.params.id },
-      { origenPlaceId, destinoPlaceId, distance, duration },
+      { origenPlaceId, destinoPlaceId } ,
       { new: true }
     );
 

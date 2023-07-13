@@ -1,3 +1,6 @@
+/* The code you provided is a JavaScript module that sets up routes for a web application using the
+Express framework. */
+
 import { Router } from "express";
 import {
   getRoute,

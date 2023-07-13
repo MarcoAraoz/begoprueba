@@ -2,6 +2,7 @@ import axios from "axios";
 import Routes from "../models/routes.model.js";
 import { API_KEY } from "../config.js";
 
+
 export const getRoutes = async (req, res) => {
   try {
     const routes = await Routes.find({ user: req.user.id }).populate("user");
@@ -38,59 +39,8 @@ export const createRoute = async (req, res) => {
   }
 };
 
-// export const createRoute = async (req, res) => {
-//   try {
-//     // Obtén los place IDs de origen y destino desde la consulta en el frontend
-//     const { origenPlaceId, destinoPlaceId } = req.body;
-
-//     // Consulta la base de datos para verificar si la ruta ya existe
-//     const existingRuta = await Ruta.findOne({ origenPlaceId, destinoPlaceId });
-
-//     if (existingRuta) {
-//       // Si la ruta ya existe en la base de datos, devuelve la información almacenada
-//       res.json(existingRuta);
-//     } else {
-//       // Si la ruta no existe, realiza la solicitud a la API Directions
-//       const url = `https://maps.googleapis.com/maps/api/directions/json?origin=place_id:${origenPlaceId}&destination=place_id:${destinoPlaceId}&key=TU_CLAVE_API`;
-//       const response = await axios.get(url);
-
-//       // Procesa la respuesta y extrae la información relevante
-//       const route = response.data.routes[0];
-//       const distance = route.legs[0].distance.text;
-//       const duration = route.legs[0].duration.text;
-//       // const steps = route.legs[0].steps.map(step => step.html_instructions);
-
-//       // Crea un nuevo objeto Ruta
-//       const newRuta = new Ruta({
-//         origenPlaceId,
-//         destinoPlaceId,
-//         distance,
-//         duration,
-//         // steps,
-//         user: user.id
-//       });
-
-//       // Guarda la ruta en la base de datos
-//       await newRuta.save();
-
-//       // Devuelve la información de la ruta como respuesta
-//       res.json(newRuta);
-//     }
-//   } catch (error) {
-//     console.error('Error al obtener la ruta:', error);
-//     res.status(500).json({ error: 'Error al obtener la ruta' });
-//   }
-// };
-
 export const getRoute = async (req, res) => {
-  // try {
-  //   const route = await Routes.findById(req.params.id);
-  //   if (!route) return res.status(404).json({ message: "Route not found" });
-  //   return res.json(route);
-  // } catch (error) {
-  //   return res.status(500).json({ message: error.message });
-  // }
-
+  
   try {
     const { id } = req.params;
     const ruta = await Routes.findById(id);
@@ -100,18 +50,6 @@ export const getRoute = async (req, res) => {
     res.status(500).json({ error: "Error al obtener la ruta" });
   }
 };
-
-// export const deleteRoute = async (req, res) => {
-//   try {
-//     const order = await Order.findByIdAndDelete(req.params.id);
-//     if (!order)
-//       return res.status(404).json({ message: "Order not found" });
-
-//     return res.sendStatus(204);
-//   } catch (error) {
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
 
 export const deleteRoute = async (req, res) => {
   try {
@@ -133,19 +71,6 @@ export const deleteRoute = async (req, res) => {
   }
 };
 
-// export const updateRoute = async (req, res) => {
-//   try {
-//     const { description, route, status } = req.body;
-//     const orderUpdated = await Order.findOneAndUpdate(
-//       { _id: req.params.id },
-//       { description, route, status},
-//       { new: true }
-//     );
-//     return res.json(orderUpdated);
-//   } catch (error) {
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
 
 export const updateRoute = async (req, res) => {
   try {

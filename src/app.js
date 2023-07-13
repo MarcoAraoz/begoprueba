@@ -4,7 +4,6 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
-import taskRoutes from "./routes/tasks.routes.js";
 import orderRoutes from "./routes/orders.routes.js";
 import pointsRoutes from "./routes/points.routes.js";
 import trucksRoutes from "./routes/trucks.routes.js";

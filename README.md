@@ -39,7 +39,17 @@ PUT http://localhost:3000/api/orders/:id | Una orden con Status "processing" no 
 
 DELETE http://localhost:3000/api/orders/:id | Una orden con Status "processing" no se puede eliminar.
 
+-Routes CRUD: **Para desarrollar este controlador se consume la API de Google Maps (Directions, Maps Javascript, Routes)**
 
+POST http://localhost:3000/api/routes | Valida el usuario y crea una ruta entre dos puntos tomando como dato el placeId especificado en la collección points. Devuelve la distancia en Km.
+
+GET http://localhost:3000/api/routes  | Regresa las rutas creadas del usuario validado que hace la consulta.
+
+GET http://localhost:3000/api/routes/:id  | Regresa la ruta indicada por el usuario validado que hace la consulta.
+
+PUT http://localhost:3000/api/routes/:id | Modifica la ruta.
+
+DELETE http://localhost:3000/api/routes/:id | Elimina la ruta.
 
 ## Packages
 
